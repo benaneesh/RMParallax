@@ -3,6 +3,8 @@ The way to impress users on the first app launch.
 
 Created by Raphael Miller and Michael Babiy.
 
+![Alt text](/screenshot.png?raw=true "RMParallax")
+
 See RMParallax in action: https://www.youtube.com/watch?v=5QRMohq1nBE
 
 If you are looking for a nice way to introduce the features of your app, this control is for you. In addition to paging through images with a nice parallax effect, RMParallax also creates a nice transition for your "description" text. As an added bonus, you can also add motion effect to your pages by simply setting motion:true.
@@ -35,9 +37,19 @@ Add your RMParallax controller to the view controller:
         rmParallaxViewController.didMoveToParentViewController(self)
 ```
 
+```swift
+// Configure padding:
+        let rmParallaxViewController = RMParallax(items: [item1, item2, item3], motion: false)
+        rmParallaxViewController.textOffset = 17.0
+        rmParallaxViewController.pageControlOffset = 17.0
+        rmParallaxViewController.loginButtonOffset = 15.0
+        rmParallaxViewController.signupButtonOffset = 17.0
+        // rest of the code
+```
+
 RMParallax uses closures to notify presenting view controller when the user is done paging through. This is a perfect spot to save response, dismiss, or do whatever you like.
 
-Please checkout included sample project. 
+Please checkout included sample project.
 
 Thanks to the team at Getty Images whom I greatly respect.
 

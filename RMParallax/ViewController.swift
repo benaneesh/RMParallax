@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,7 +19,7 @@ class ViewController: UIViewController {
         let item2 = RMParallaxItem(image: UIImage(named: "item2")!, text: "FOLLOW WORLD CLASS PHOTOGRAPHERS")
         let item3 = RMParallaxItem(image: UIImage(named: "item3")!, text: "EXPLORE OUR COLLECTION BY CATEGORY")
         
-        let rmParallaxViewController = RMParallax(items: [item1, item2, item3], motion: false)
+        let rmParallaxViewController = RMParallax(items: [item1, item2, item3], motion: false) 
         rmParallaxViewController.completionHandler = {
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 rmParallaxViewController.view.alpha = 0.0
@@ -34,5 +36,15 @@ class ViewController: UIViewController {
         return true
     }
 
+}
+
+extension ViewController: RMParallaxDelegate {
+    func didPressSignupButton() {
+        print("sign up button pressed")
+    }
+    
+    func didPressLoginButton() {
+        print("log in button pressed")
+    }
 }
 
